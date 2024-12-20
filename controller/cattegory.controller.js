@@ -1,15 +1,15 @@
 import  Category from "../models/cattegory.js"
 
-export const deleteCattegory = (request,response,next)=>{
-    Category.deleteOne({_id: request.params.id})
-    .then(result=>{
-       console.log(result); 
-       return response.status(200).json({message: "Category Deleted.."});
-    }).catch(err=>{
-        console.log(err);
-        return response.status(500).json({error: "Internal Server Error"});
-    })
-}
+// export const deleteCattegory = (request,response,next)=>{
+//     Category.deleteOne({_id: request.params.id})
+//     .then(result=>{
+//        console.log(result); 
+//        return response.status(200).json({message: "Category Deleted.."});
+//     }).catch(err=>{
+//         console.log(err);
+//         return response.status(500).json({error: "Internal Server Error"});
+//     })
+// }
 export const getCategoryById = (request,response,next)=>{
     let id = request.params.id;
     Category.findById(id)

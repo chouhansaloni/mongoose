@@ -7,6 +7,6 @@ router.post('/add', createCattegory);
 router.get('/view', getAllCattegory);
 router.get('/:id',getCategoryById)
 // router.put('/update/:slug', updateCattegory);
-router.delete('/delete/:slug', deleteCattegory);
+// router.delete('/delete/:slug', deleteCattegory);
 
 export default router;

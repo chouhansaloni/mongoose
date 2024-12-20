@@ -1,7 +1,18 @@
 import Product from "../models/product.js";
 
+export const updateProduct = (request, response, next) => {
+    Product.findOneAndUpdate({ _id: request.params.id }) 
+        .then(result => {
+            console.log(result);
+            return response.status(200).json({ message: "Product Deleted.." });
+        })
+        .catch(err => {
+            console.log(err);
+            return response.status(500).json({ error: "Internal Server Error" });
+        });
+};
 export const deleteProduct = (request, response, next) => {
-    Product.deleteOne({ _id: request.params.name })
+    Product.deleteOne({ _id: request.params.id })
         .then(result => {
             console.log(result);
             return response.status(200).json({ message: "Product Deleted.." });
